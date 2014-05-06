@@ -1,0 +1,18 @@
+!#/usr/bin/php
+<?php
+
+require 'Operator.interface.php';
+require 'Increment.class.php';
+require 'Decrement.class.php';
+require 'ShiftLeft.class.php';
+require 'ShiftRight.class.php';
+require 'Input.class.php';
+require 'Output.class.php';
+require 'BeginLoop.class.php';
+require 'EndLoop.class.php';
+require 'OperatorVisitor.class.php';
+require 'BrainFuck.class.php';
+
+$oBF = new BrainFuck(
+    '++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
+);
