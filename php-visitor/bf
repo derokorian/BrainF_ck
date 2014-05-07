@@ -11,8 +11,14 @@ require 'Output.class.php';
 require 'BeginLoop.class.php';
 require 'EndLoop.class.php';
 require 'OperatorVisitor.class.php';
+require 'BrainFuckVisitor.class.php';
 require 'BrainFuck.class.php';
 
-$oBF = new BrainFuck(
-    '++++++++[>++++[>++>+++>+++>+<<<<-]>+>+>->>+[<]<-]>>.>---.+++++++..+++.>>.<-.<.+++.------.--------.>>+.>++.'
-);
+if( isset($argv[1]) ) {
+    $strFile = $argv[1];
+}
+$strInput = isset($argv[2]) ? $argv[2] : '';
+
+if( isset($strFile) && is_file($strFile) && is_readable($strFile) ) {
+    new BrainFuck(file_get_contents($strFile), $strInput);
+}
